@@ -3,8 +3,8 @@ name: Deploy mdBook to GitHub Pages
 on:
   push:
     branches:
-      - main  # Substitua "main" pela sua branch principal, se necessário
-  workflow_dispatch:  # Permite executar manualmente
+      - main  
+  workflow_dispatch:  
 
 permissions:
   contents: read
@@ -26,7 +26,7 @@ jobs:
         echo "$(pwd)/bin" >> "${GITHUB_PATH}"
 
     - name: Build mdBook
-      working-directory: ./my-first-book  # Caminho para o diretório do mdBook
+      working-directory: ./my-first-book  # diretório do mdBook
       run: mdbook build
     - name: Setup Pages
       id: pages
