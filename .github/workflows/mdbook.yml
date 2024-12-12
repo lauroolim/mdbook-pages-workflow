@@ -28,6 +28,15 @@ jobs:
     - name: Build mdBook
       working-directory: ./my-first-book  # Caminho para o diretório do mdBook
       run: mdbook build
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v5
+    - name: Build with mdBook
+      run: mdbook build
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./book
 
   deploy:
     environment:
