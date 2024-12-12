@@ -16,8 +16,9 @@ jobs:
 
     - name: Install mdBook
       run: |
-        curl -sSL https://github.com/rust-lang/mdBook/releases/latest/download/mdbook-v0.4.32-x86_64-unknown-linux-gnu.tar.gz | tar -xz
-        sudo mv mdbook /usr/local/bin/
+        mkdir bin
+        curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.21/mdbook-v0.4.21-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
+        echo "$(pwd)/bin" >> "${GITHUB_PATH}"
 
     - name: Build mdBook
       working-directory: ./my-first-book  # Caminho para o diretório do mdBook
