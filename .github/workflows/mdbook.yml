@@ -6,6 +6,11 @@ on:
       - main  # Substitua "main" pela sua branch principal, se necessário
   workflow_dispatch:  # Permite executar manualmente
 
+permissions:
+contents: read
+pages: write
+id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
