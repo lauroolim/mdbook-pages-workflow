@@ -32,6 +32,13 @@ jobs:
       MDBOOK_VERSION: 0.4.36
     steps:
       - uses: actions/checkout@v4
+      - name: Update rustup
+        run: rustup self update
+      - name: Install Rust
+        run: |
+          rustup set profile minimal
+          rustup toolchain install 1.82 -c rust-docs
+          rustup default 1.82
       - name: Install mdBook
         run: |
           mkdir bin
