@@ -1,3 +1,3 @@
-# mdbook workflow com github actions
+# MDBook + GitHub Pages 
 
-um exemplo de workflow com github actions para o mdbook
+Workflow para deploy automático no GitHub pages de um projeto MDBook localizado em um subdiretório do projeto
